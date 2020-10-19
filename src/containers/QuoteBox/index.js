@@ -1,41 +1,26 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
+import './index.css'
+import RandomText from '../../components/RandomText'
+import Button from '../../components/Button'
 
-
-class RandomText extends Component{
-    render(){
-        return(
-            <div id="text">
-                <p>{this.props.quote.quote}</p>
-                <p>{this.props.quote.author}</p>
-            </div>
-        )
-    }
-}
-
-class Button extends Component{
-    render(){
-        return(
-            <div> 
-                <a id="tweet-quote" href="#">tweet-quote</a>
-                <button id="new-quote" onClick={this.props.click}>new quote</button>
-            </div>
-        )
-    }
-}
 
 class QuoteBox extends Component{
 
     state = {
-         number: 0,
          quotes: [],
-         quote: {}
+         quote: {},
+         colors:['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857", "#474699", "#78FE3F", "#023424", "#A55922"],
+         color: ''
     }
 
     random = () => {
         this.setState({
-            number: Math.floor(Math.random() * ( this.state.quotes.length -1)) + 1,
-            quote: this.state.quotes[this.state.number]
+            quote: this.state.quotes[Math.floor(Math.random() * ( this.state.quotes.length -1)) + 1],
+            color: this.state.colors[Math.floor(Math.random() * (this.state.colors.length-1)) + 1]
         })
+        document.documentElement.style
+        .setProperty('--change-color', this.state.color);
     }
   
     componentDidMount() {
@@ -51,9 +36,9 @@ class QuoteBox extends Component{
     }
     render(){
       return(
-        <div id="quote-box">
+        <div id="quote-box" class="quote-box">
             <RandomText quote={this.state.quote} />
-            <Button click={this.random} />
+            <Button click={this.random}/>
         </div>
       )
     }

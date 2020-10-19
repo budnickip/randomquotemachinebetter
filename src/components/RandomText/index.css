@@ -1,0 +1,11 @@
+.quote-text{
+    font-size: xx-large;
+    font-weight: 400;
+    transition: 2s;
+    color: var(--change-color);
+  }
+  
+  .quote-author{
+    transition: 2s;
+    color: var(--change-color);
+  }
