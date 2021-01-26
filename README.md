@@ -1,5 +1,5 @@
 ###Maszyna losująca cytaty<br />
-
+https://budnickip.github.io/randomquotemachinebetter/
 Aplikacja wykorzystuje takie technologie jak: <br />
 React, Redux <br />
 Obiekty które zawieraja cytat wraz z jego autorem pobierane są z API. 
