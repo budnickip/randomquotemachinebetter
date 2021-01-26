@@ -1,0 +1,10 @@
+.buttons{
+    padding: 15px;
+    &__new-quote{
+        transition: 2s;
+        background-color: var(--change-color);
+        color: white;
+        border: none;
+        padding: 10px;
+    }
+}
